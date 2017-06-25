@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SYSU_MT</string>
+    <string name="titleA">正在热映</string>
+    <string name="titleB">还未上映</string>
 </resources>
