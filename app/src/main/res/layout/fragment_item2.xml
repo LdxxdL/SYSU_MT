@@ -3,13 +3,16 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
     <TextView
+        android:layout_marginBottom="10dp"
         android:id="@+id/textView2"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="fragment2"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:text="广州"
+        android:gravity="center_vertical"
         android:textSize="20sp"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
