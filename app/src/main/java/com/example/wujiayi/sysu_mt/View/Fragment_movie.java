@@ -1,15 +1,14 @@
 package com.example.wujiayi.sysu_mt.View;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.wujiayi.sysu_mt.R;
 import com.example.wujiayi.sysu_mt.Model.minfoAdapter;
 import com.example.wujiayi.sysu_mt.Model.movieinfo;
+import com.example.wujiayi.sysu_mt.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +23,6 @@ public class Fragment_movie extends ListFragment
 
     private List<movieinfo> MovieData;
     private minfoAdapter adapter;
-    private int ImgId;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +30,7 @@ public class Fragment_movie extends ListFragment
         MovieData = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            ImgId = getDrawResourceID("ic_launcher.png");
-            movieinfo movie = new movieinfo(ImgId,"123","123","123");
+            movieinfo movie = new movieinfo(1,"123","123","123");
             MovieData.add(movie);
         }
 
@@ -49,12 +46,6 @@ public class Fragment_movie extends ListFragment
         this.setListAdapter(adapter);
 
         return view;
-    }
-
-    public int getDrawResourceID(String resourceName) {
-        Context context = getContext();
-        int id = context.getResources().getIdentifier(resourceName, "drawble", context.getPackageName());
-        return id;
     }
 
 }
