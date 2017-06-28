@@ -20,6 +20,7 @@ public class minfoAdapter extends BaseAdapter{
 
     private List<movieinfo> movieData;//定义数据。
     private Context context;//定义Inflater,加载我们自定义的布局。
+    private int test;//测试
 
     public minfoAdapter(Context _context, List<movieinfo> _data) {
         this.movieData = _data;
