@@ -14,6 +14,10 @@ import android.widget.TabWidget;
 import android.widget.TextView;
 
 
+import com.example.wujiayi.sysu_mt.Model.MyFragmentAdapter;
+import com.example.wujiayi.sysu_mt.View.Fragment_cinime;
+import com.example.wujiayi.sysu_mt.View.Fragment_movie;
+import com.example.wujiayi.sysu_mt.View.Fragment_myinfo;
 
 import java.util.ArrayList;
 import java.util.List;

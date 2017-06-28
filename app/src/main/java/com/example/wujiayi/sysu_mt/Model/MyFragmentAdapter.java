@@ -1,4 +1,4 @@
-package com.example.wujiayi.sysu_mt;
+package com.example.wujiayi.sysu_mt.Model;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

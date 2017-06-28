@@ -1,4 +1,4 @@
-package com.example.wujiayi.sysu_mt;
+package com.example.wujiayi.sysu_mt.Model;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.wujiayi.sysu_mt.R;
 
 import java.util.List;
 

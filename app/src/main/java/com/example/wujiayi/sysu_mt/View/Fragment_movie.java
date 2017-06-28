@@ -1,4 +1,4 @@
-package com.example.wujiayi.sysu_mt;
+package com.example.wujiayi.sysu_mt.View;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -6,6 +6,10 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.wujiayi.sysu_mt.R;
+import com.example.wujiayi.sysu_mt.Model.minfoAdapter;
+import com.example.wujiayi.sysu_mt.Model.movieinfo;
 
 import java.util.ArrayList;
 import java.util.List;

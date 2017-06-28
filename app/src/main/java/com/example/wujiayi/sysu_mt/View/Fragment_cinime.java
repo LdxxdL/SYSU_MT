@@ -1,10 +1,12 @@
-package com.example.wujiayi.sysu_mt;
+package com.example.wujiayi.sysu_mt.View;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.wujiayi.sysu_mt.R;
 
 /**
  * Created by wujiayi on 17/5/23.

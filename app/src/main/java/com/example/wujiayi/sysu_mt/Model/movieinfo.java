@@ -1,4 +1,4 @@
-package com.example.wujiayi.sysu_mt;
+package com.example.wujiayi.sysu_mt.Model;
 
 /**
  * Created by Wujiayi on 2017/6/25.
