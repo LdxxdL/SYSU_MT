@@ -6,14 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 /**
  * Created by wujiayi on 17/5/23.
  */
 public class Fragment_cinime extends Fragment
 
     {
-
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
         savedInstanceState) {

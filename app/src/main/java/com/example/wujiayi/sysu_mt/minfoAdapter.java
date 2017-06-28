@@ -1,9 +1,14 @@
 package com.example.wujiayi.sysu_mt;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -13,22 +18,28 @@ import java.util.List;
 
 public class minfoAdapter extends BaseAdapter{
 
-    private List<movieinfo> mData;//定义数据。
-    private LayoutInflater mInflater;//定义Inflater,加载我们自定义的布局。
+    private List<movieinfo> movieData;//定义数据。
+    private Context context;//定义Inflater,加载我们自定义的布局。
 
-    public minfoAdapter(LayoutInflater inflater, List<movieinfo> data) {
-        mData = data;
-        mInflater = inflater;
+    public minfoAdapter(Context _context, List<movieinfo> _data) {
+        this.movieData = _data;
+        this.context = _context;
     }
 
     @Override
     public int getCount() {
-        return mData.size();
+        if (movieData == null) {
+            return 0;
+        }
+        return movieData.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return i;
+        if (movieData == null) {
+            return 0;
+        }
+        return movieData.get(i);
     }
 
     @Override
@@ -38,9 +49,41 @@ public class minfoAdapter extends BaseAdapter{
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        View minfoView = mInflater.inflate(R.layout.movie_view, null);
-        movieinfo movieInfo = mData.get(i);
-        return null;
+        View movieView;
+        ViewHolder viewHolder;
+
+        if (view == null) {
+            movieView = LayoutInflater.from(context).inflate(R.layout.movie_view, null);
+            viewHolder = new ViewHolder();
+            viewHolder.MovieImage = (ImageView) movieView.findViewById(R.id.movieImage);
+            viewHolder.MovieName = (TextView) movieView.findViewById(R.id.movieName);
+            viewHolder.MovieType = (TextView) movieView.findViewById(R.id.movieType);
+            viewHolder.MovieScore = (TextView) movieView.findViewById(R.id.movieScore);
+            movieView.setTag(viewHolder);
+        } else {
+            movieView = view;
+            viewHolder = (ViewHolder) movieView.getTag();
+        }
+
+        int j = movieData.get(i).getSrc();
+
+        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), movieData.get(i).getSrc());
+
+        viewHolder.MovieImage.setImageBitmap(bitmap);
+        viewHolder.MovieName.setText(movieData.get(i).getName());
+        viewHolder.MovieType.setText(movieData.get(i).getType());
+        viewHolder.MovieScore.setText(movieData.get(i).getScore());
+
+        return movieView;
     }
+
+    private class ViewHolder {
+        public ImageView MovieImage;
+        public TextView MovieName;
+        public TextView MovieType;
+        public TextView MovieScore;
+    }
+
+
 }
 
