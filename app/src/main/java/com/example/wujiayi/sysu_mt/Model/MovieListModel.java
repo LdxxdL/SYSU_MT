@@ -1,6 +1,7 @@
 package com.example.wujiayi.sysu_mt.Model;
 
 import android.app.Activity;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.wujiayi.sysu_mt.Controller.User;
@@ -43,12 +44,12 @@ public class MovieListModel {
         movieListCall.enqueue(new Callback<MovieList>() {
             @Override
             public void onResponse(Call<MovieList> call, Response<MovieList> response) {
-                Toast.makeText(activity,response.body().getFirst().getName(),Toast.LENGTH_SHORT).show();
+                Log.e("sbwujiayi", response.body().getFirst().getName());
             }
 
             @Override
             public void onFailure(Call<MovieList> call, Throwable t) {
-                Toast.makeText(activity,"出错了傻逼.",Toast.LENGTH_SHORT).show();
+                Log.e("sbwujiayi", "出错了傻逼");
             }
         });
     }
