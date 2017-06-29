@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.wujiayi.sysu_mt.Model.minfoAdapter;
-import com.example.wujiayi.sysu_mt.Model.movieinfo;
 import com.example.wujiayi.sysu_mt.R;
+import com.example.wujiayi.sysu_mt.Model.MovieData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ public class Fragment_movie extends ListFragment
 
 {
 
-    private List<movieinfo> MovieData;
+    private List<MovieData> MovieData;
     private minfoAdapter adapter;
 
     public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class Fragment_movie extends ListFragment
         MovieData = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            movieinfo movie = new movieinfo(1,"123","123","123");
+            MovieData movie = new MovieData(1,"123","123","123");
             MovieData.add(movie);
         }
 
