@@ -7,7 +7,7 @@ import android.location.Location;
  */
 
 public class User {
-    public String IP = "http://192.168.157.1:3000/";
+    public String IP = "http://192.168.157.1:3000/client/";
     public String city;
 
     private User() {

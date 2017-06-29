@@ -12,11 +12,11 @@ import retrofit2.http.Path;
 
 public interface RetrofitInterface {
     @GET("/movielist")
-    Call<List<MovieData>> getMovieList();
+    Call<MovieList> getMovieList();
 
     @GET("/movielist/{path}")
     Call<MovieData> getMovie(@Path("path") String path);
 
-    @GET("/cinemalist/{path}")
-    Call<CinemaData> getCinema(@Path("path") String path);
+//    @GET("/cinemalist/{path}")
+//    Call<> getCinema(@Path("path") String path);
 }
