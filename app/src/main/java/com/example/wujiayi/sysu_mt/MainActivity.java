@@ -13,8 +13,6 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
-
-import com.example.wujiayi.sysu_mt.Model.MovieListModel;
 import com.example.wujiayi.sysu_mt.Model.MyFragmentAdapter;
 import com.example.wujiayi.sysu_mt.View.Fragment_cinime;
 import com.example.wujiayi.sysu_mt.View.Fragment_movie;
@@ -43,10 +41,10 @@ public class MainActivity extends FragmentActivity implements
         initView();//初始化控件
         initPage();//初始化页面
 
-        android.os.Debug.waitForDebugger();
-        MovieListModel test = new MovieListModel();
-        test.activity = this;
-        test.getMovieList();
+//        android.os.Debug.waitForDebugger();
+//        MovieListModel test = new MovieListModel();
+//        test.activity = this;
+//        test.getMovieList();
 
 
 
