@@ -17,10 +17,10 @@ import java.util.List;
 
 public class CinfoAdapter extends BaseAdapter {
 
-    private List<CinimeInfo> CinimeData;//定义数据。
+    private List<CinimeData> CinimeData;//定义数据。
     private Context context;
 
-    public CinfoAdapter(Context _context, List<CinimeInfo> _data) {
+    public CinfoAdapter(Context _context, List<CinimeData> _data) {
         this.CinimeData = _data;
         this.context = _context;
     }

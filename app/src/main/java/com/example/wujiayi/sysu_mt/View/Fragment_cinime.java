@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.wujiayi.sysu_mt.Model.CinfoAdapter;
-import com.example.wujiayi.sysu_mt.Model.CinimeInfo;
+import com.example.wujiayi.sysu_mt.Model.CinimeData;
 import com.example.wujiayi.sysu_mt.R;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class Fragment_cinime extends ListFragment
 
     {
 
-        private List<CinimeInfo> cinimeData;
+        private List<CinimeData> cinimeData;
         private CinfoAdapter adapter;
 
         public void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class Fragment_cinime extends ListFragment
             cinimeData = new ArrayList<>();
 
             for (int i = 0; i < 10; i++) {
-                CinimeInfo cinime = new CinimeInfo("123","123");
+                CinimeData cinime = new CinimeData("123","123");
                 cinimeData.add(cinime);
             }
 
