@@ -7,7 +7,7 @@ import java.util.List;
  */
 
 public class MovieListModel {
-    public List<movieinfo> movieList;
+    public List<MovieData> movieList;
 
 
 }

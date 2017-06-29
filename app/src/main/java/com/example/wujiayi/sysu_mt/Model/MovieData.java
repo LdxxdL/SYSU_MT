@@ -4,13 +4,13 @@ package com.example.wujiayi.sysu_mt.Model;
  * Created by Wujiayi on 2017/6/25.
  */
 
-public class movieinfo {
+public class MovieData {
     private int src;
     private String name;
     private String type;
     private String score;
 
-    public movieinfo(int _src, String _name, String _type, String _score) {
+    public MovieData(int _src, String _name, String _type, String _score) {
         this.src = _src;
         this.name = _name;
         this.type = _type;

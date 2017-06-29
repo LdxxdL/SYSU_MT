@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.example.wujiayi.sysu_mt.R;
 import com.example.wujiayi.sysu_mt.Model.minfoAdapter;
-import com.example.wujiayi.sysu_mt.Model.movieinfo;
+import com.example.wujiayi.sysu_mt.Model.MovieData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class Fragment_movie extends ListFragment
 
 {
 
-    private List<movieinfo> MovieData;
+    private List<com.example.wujiayi.sysu_mt.Model.MovieData> MovieData;
     private minfoAdapter adapter;
     private int ImgId;
 
@@ -33,7 +33,7 @@ public class Fragment_movie extends ListFragment
 
         for (int i = 0; i < 10; i++) {
             ImgId = getDrawResourceID("ic_launcher.png");
-            movieinfo movie = new movieinfo(ImgId,"123","123","123");
+            com.example.wujiayi.sysu_mt.Model.MovieData movie = new MovieData(ImgId,"123","123","123");
             MovieData.add(movie);
         }
 

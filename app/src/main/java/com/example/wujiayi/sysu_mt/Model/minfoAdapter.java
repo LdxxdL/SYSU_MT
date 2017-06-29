@@ -20,10 +20,10 @@ import java.util.List;
 
 public class minfoAdapter extends BaseAdapter{
 
-    private List<movieinfo> movieData;//定义数据。
+    private List<MovieData> movieData;//定义数据。
     private Context context;//定义Inflater,加载我们自定义的布局。
 
-    public minfoAdapter(Context _context, List<movieinfo> _data) {
+    public minfoAdapter(Context _context, List<MovieData> _data) {
         this.movieData = _data;
         this.context = _context;
     }

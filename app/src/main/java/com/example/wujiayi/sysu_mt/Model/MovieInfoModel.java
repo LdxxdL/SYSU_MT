@@ -5,9 +5,9 @@ package com.example.wujiayi.sysu_mt.Model;
  */
 
 public class MovieInfoModel {
-    public movieinfo movieview;
+    public MovieData movieview;
 
-    public MovieInfoModel(movieinfo movieview) {
+    public MovieInfoModel(MovieData movieview) {
         this.movieview = movieview;
     }
 
