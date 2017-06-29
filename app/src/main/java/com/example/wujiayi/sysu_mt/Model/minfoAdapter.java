@@ -1,8 +1,6 @@
 package com.example.wujiayi.sysu_mt.Model;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,11 +65,6 @@ public class minfoAdapter extends BaseAdapter{
             viewHolder = (ViewHolder) movieView.getTag();
         }
 
-        int j = movieData.get(i).getSrc();
-
-        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), movieData.get(i).getSrc());
-
-        viewHolder.MovieImage.setImageBitmap(bitmap);
         viewHolder.MovieName.setText(movieData.get(i).getName());
         viewHolder.MovieType.setText(movieData.get(i).getType());
         viewHolder.MovieScore.setText(movieData.get(i).getScore());
