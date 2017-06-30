@@ -65,7 +65,7 @@ public class minfoAdapter extends BaseAdapter{
 
         viewHolder.MovieName.setText(movieData.get(i).name);
         viewHolder.MovieType.setText(movieData.get(i).type);
-        viewHolder.MovieScore.setText(movieData.get(i).score);
+        viewHolder.MovieScore.setText(movieData.get(i).score + "分");
 
         return movieView;
     }

@@ -41,6 +41,14 @@ public class CinfoAdapter extends BaseAdapter {
         return CinimeData.get(i);
     }
 
+    public String getName(int i) {
+        return CinimeData.get(i).getName();
+    }
+
+    public String getLocation(int i) {
+        return CinimeData.get(i).getLocation();
+    }
+
     @Override
     public long getItemId(int i) {
         return i;
