@@ -5,13 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.wujiayi.sysu_mt.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Wujiayi on 2017/6/25.
@@ -56,7 +54,6 @@ public class minfoAdapter extends BaseAdapter{
         if (view == null) {
             movieView = LayoutInflater.from(context).inflate(R.layout.movie_view, null);
             viewHolder = new ViewHolder();
-            viewHolder.MovieImage = (ImageView) movieView.findViewById(R.id.movieImage);
             viewHolder.MovieName = (TextView) movieView.findViewById(R.id.movieName);
             viewHolder.MovieType = (TextView) movieView.findViewById(R.id.movieType);
             viewHolder.MovieScore = (TextView) movieView.findViewById(R.id.movieScore);
@@ -74,7 +71,6 @@ public class minfoAdapter extends BaseAdapter{
     }
 
     private class ViewHolder {
-        public ImageView MovieImage;
         public TextView MovieName;
         public TextView MovieType;
         public TextView MovieScore;

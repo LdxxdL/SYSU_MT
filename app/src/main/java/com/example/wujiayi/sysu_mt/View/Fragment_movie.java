@@ -1,12 +1,14 @@
 package com.example.wujiayi.sysu_mt.View;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.wujiayi.sysu_mt.Controller.User;
 import com.example.wujiayi.sysu_mt.Model.MovieData;
@@ -98,5 +100,13 @@ public class Fragment_movie extends ListFragment
             }
         }).start();
     }
-}
 
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        Intent intent = new Intent(getActivity(), MovieActivity.class);
+        startActivity(intent);
+
+    }
+}
