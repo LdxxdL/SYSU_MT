@@ -10,7 +10,6 @@ import android.widget.TextView;
 import com.example.wujiayi.sysu_mt.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Wujiayi on 2017/6/25.

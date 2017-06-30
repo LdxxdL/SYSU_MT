@@ -5,32 +5,21 @@ package com.example.wujiayi.sysu_mt.Model;
  */
 
 public class MovieData {
-    private String name;
-    private String type;
-    private String score;
+    public String src;
+    public String name;
+    public String type;
+    public String score;
+    public String date;
+    public String intro;
+    public String actor;
 
-    public MovieData(String _name, String _type, String _score) {
-        this.name = _name;
-        this.type = _type;
-        this.score = _score;
-    }
-
-    public void setName(String _name) {
-        this.name = _name;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setType(String _type) {
-        this.type = _type;
-    }
-    public String getType() {
-        return type;
-    }
-    public void setScore(String _score) {
-        this.score = _score;
-    }
-    public String getScore() {
-        return score;
+    public MovieData(String src, String name, String type, String score, String date, String intro, String actor) {
+        this.src = src;
+        this.name = name;
+        this.type = type;
+        this.score = score;
+        this.date = date;
+        this. intro = intro;
+        this.actor = actor;
     }
 }
