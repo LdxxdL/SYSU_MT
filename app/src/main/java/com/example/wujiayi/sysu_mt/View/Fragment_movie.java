@@ -71,7 +71,6 @@ public class Fragment_movie extends ListFragment
             @Override
             public void run() {
                 try {
-                    Log.e("sbwujiayi", "!!!!!!!!!!!!!!!!");
                     URL url = new URL(User.getInstance().IP + "movielist");
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     InputStream is = connection.getInputStream();
@@ -82,7 +81,7 @@ public class Fragment_movie extends ListFragment
                     is.close();
                     connection.disconnect();
 
-                    JSONArray jsonarray = new JSONArray(json);Log.e("sbwujiayi",json);
+                    JSONArray jsonarray = new JSONArray(json);
                     for (int i = 0; i < jsonarray.length(); i++) {
                         JSONObject jsonobj = jsonarray.getJSONObject(i);
                         String name = jsonobj.getString("name"), src = jsonobj.getString("src"),

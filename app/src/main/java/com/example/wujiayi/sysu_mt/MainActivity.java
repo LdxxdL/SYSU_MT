@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import android.widget.TabWidget;
 import android.widget.TextView;
 
 import com.example.wujiayi.sysu_mt.Controller.MyFragmentAdapter;
+import com.example.wujiayi.sysu_mt.Model.GetImage;
 import com.example.wujiayi.sysu_mt.View.Fragment_cinime;
 import com.example.wujiayi.sysu_mt.View.Fragment_movie;
 import com.example.wujiayi.sysu_mt.View.Fragment_myinfo;
@@ -33,15 +35,19 @@ public class MainActivity extends FragmentActivity implements
     private String textViewArray[] = { "影片", "影院", "我的"};
     private List<Fragment> list = new ArrayList<Fragment>();
     private ViewPager vp;
+    public GetImage Image;
+    public ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initView();//初始化控件
         initPage();//初始化页面
 
 
+        Log.e("sbwujiayi", "test");
 
     }
 
