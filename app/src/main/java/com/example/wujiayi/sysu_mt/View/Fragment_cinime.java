@@ -53,7 +53,11 @@ public class Fragment_cinime extends ListFragment
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
-        Intent intent = new Intent(getActivity(), MovieActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("name", adapter.getName(position));
+        bundle.putString("location", adapter.getLocation(position));
+        Intent intent = new Intent(getActivity(), CinimeActivity.class);
+        intent.putExtras(bundle);
         startActivity(intent);
 
     }

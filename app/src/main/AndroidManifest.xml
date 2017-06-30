@@ -27,6 +27,8 @@
 
         <activity android:name=".View.MovieActivity">
         </activity>
+        <activity android:name=".View.CinimeActivity">
+        </activity>
     </application>
 
 </manifest>
