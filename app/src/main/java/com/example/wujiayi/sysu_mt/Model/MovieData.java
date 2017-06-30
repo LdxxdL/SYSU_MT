@@ -5,24 +5,16 @@ package com.example.wujiayi.sysu_mt.Model;
  */
 
 public class MovieData {
-    private int src;
     private String name;
     private String type;
     private String score;
 
-    public MovieData(int _src, String _name, String _type, String _score) {
-        this.src = _src;
+    public MovieData(String _name, String _type, String _score) {
         this.name = _name;
         this.type = _type;
         this.score = _score;
     }
 
-    public void setSrc(int _src) {
-        this.src = _src;
-    }
-    public int getSrc() {
-        return src;
-    }
     public void setName(String _name) {
         this.name = _name;
     }

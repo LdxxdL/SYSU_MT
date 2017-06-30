@@ -1,14 +1,16 @@
 package com.example.wujiayi.sysu_mt.View;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import com.example.wujiayi.sysu_mt.Model.MovieData;
 import com.example.wujiayi.sysu_mt.Model.minfoAdapter;
 import com.example.wujiayi.sysu_mt.R;
-import com.example.wujiayi.sysu_mt.Model.MovieData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +32,7 @@ public class Fragment_movie extends ListFragment
         MovieData = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            MovieData movie = new MovieData(1,"123","123","123");
+            MovieData movie = new MovieData("123","123","123");
             MovieData.add(movie);
         }
 
@@ -48,5 +50,13 @@ public class Fragment_movie extends ListFragment
         return view;
     }
 
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        Intent intent = new Intent(getActivity(), MovieActivity.class);
+        startActivity(intent);
+
+    }
 }
 

@@ -3,4 +3,106 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/LightBlack">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:id="@+id/movieDetailImage"
+            android:src="@mipmap/movie_selected"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.8"
+                android:text="变形金刚5：最后的骑士"
+                android:textSize="18sp"
+                android:textColor="@color/White"
+                android:gravity="center_vertical"
+                android:id="@+id/movieDetailName"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:text="7.4分（xxx人评分）"
+                android:textSize="15sp"
+                android:textColor="@color/Brown"
+                android:gravity="center_vertical"
+                android:id="@+id/movieDetailScore"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="动作、冒险、科幻"
+                android:textSize="12sp"
+                android:textColor="@color/White"
+                android:gravity="center_vertical"
+                android:id="@+id/movieDetailType"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="美国/150分钟"
+                android:textSize="12sp"
+                android:textColor="@color/White"
+                android:gravity="center_vertical"
+                android:id="@+id/movieDetailArea"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="2017-06-23上映"
+                android:textSize="12sp"
+                android:textColor="@color/White"
+                android:gravity="center_vertical"
+                android:id="@+id/movieDetailDate"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_margin="8dp"
+        android:background="@color/LightRed"
+        android:text="立即购票"
+        android:textColor="@color/White"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/movieIntroduction"
+        android:text="111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#EEEEEE"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/movieActor"
+        android:text="1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp" />
+
 </LinearLayout>
