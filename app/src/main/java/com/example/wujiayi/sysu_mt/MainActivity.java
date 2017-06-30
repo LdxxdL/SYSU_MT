@@ -13,7 +13,7 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
-import com.example.wujiayi.sysu_mt.Model.MyFragmentAdapter;
+import com.example.wujiayi.sysu_mt.Controller.MyFragmentAdapter;
 import com.example.wujiayi.sysu_mt.View.Fragment_cinime;
 import com.example.wujiayi.sysu_mt.View.Fragment_movie;
 import com.example.wujiayi.sysu_mt.View.Fragment_myinfo;
@@ -40,11 +40,6 @@ public class MainActivity extends FragmentActivity implements
         setContentView(R.layout.activity_main);
         initView();//初始化控件
         initPage();//初始化页面
-
-//        android.os.Debug.waitForDebugger();
-//        MovieListModel test = new MovieListModel();
-//        test.activity = this;
-//        test.getMovieList();
 
 
 
@@ -94,7 +89,8 @@ public class MainActivity extends FragmentActivity implements
         list.add(fragment_myinfo);
 
         //绑定Fragment适配器
-        vp.setAdapter(new MyFragmentAdapter(getSupportFragmentManager(), list));
+        MyFragmentAdapter adapter = new MyFragmentAdapter(getSupportFragmentManager(), list);
+        vp.setAdapter(adapter);
         mTabHost.getTabWidget().setDividerDrawable(null);
     }
 

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.wujiayi.sysu_mt.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,10 +19,10 @@ import java.util.List;
 
 public class minfoAdapter extends BaseAdapter{
 
-    private List<MovieData> movieData;//定义数据。
+    private ArrayList<MovieData> movieData;//定义数据。
     private Context context;//定义Inflater,加载我们自定义的布局。
 
-    public minfoAdapter(Context _context, List<MovieData> _data) {
+    public minfoAdapter(Context _context, ArrayList<MovieData> _data) {
         this.movieData = _data;
         this.context = _context;
     }
@@ -65,9 +66,9 @@ public class minfoAdapter extends BaseAdapter{
             viewHolder = (ViewHolder) movieView.getTag();
         }
 
-        viewHolder.MovieName.setText(movieData.get(i).getName());
-        viewHolder.MovieType.setText(movieData.get(i).getType());
-        viewHolder.MovieScore.setText(movieData.get(i).getScore());
+        viewHolder.MovieName.setText(movieData.get(i).name);
+        viewHolder.MovieType.setText(movieData.get(i).type);
+        viewHolder.MovieScore.setText(movieData.get(i).score);
 
         return movieView;
     }
