@@ -1,4 +1,4 @@
-package com.example.wujiayi.sysu_mt.Model;
+package com.example.wujiayi.sysu_mt.Controller;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

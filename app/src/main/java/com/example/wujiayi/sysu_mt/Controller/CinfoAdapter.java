@@ -1,4 +1,4 @@
-package com.example.wujiayi.sysu_mt.Model;
+package com.example.wujiayi.sysu_mt.Controller;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.wujiayi.sysu_mt.Model.CinemaData;
 import com.example.wujiayi.sysu_mt.R;
 
 import java.util.List;
@@ -17,36 +18,36 @@ import java.util.List;
 
 public class CinfoAdapter extends BaseAdapter {
 
-    private List<CinimeData> CinimeData;//定义数据。
+    public List<com.example.wujiayi.sysu_mt.Model.CinemaData> CinemaData;//定义数据。
     private Context context;
 
-    public CinfoAdapter(Context _context, List<CinimeData> _data) {
-        this.CinimeData = _data;
+    public CinfoAdapter(Context _context, List<CinemaData> _data) {
+        this.CinemaData = _data;
         this.context = _context;
     }
 
     @Override
     public int getCount() {
-        if (CinimeData == null) {
+        if (CinemaData == null) {
             return 0;
         }
-        return CinimeData.size();
+        return CinemaData.size();
     }
 
     @Override
     public Object getItem(int i) {
-        if (CinimeData == null) {
+        if (CinemaData == null) {
             return 0;
         }
-        return CinimeData.get(i);
+        return CinemaData.get(i);
     }
 
     public String getName(int i) {
-        return CinimeData.get(i).name;
+        return CinemaData.get(i).name;
     }
 
     public String getLocation(int i) {
-        return CinimeData.get(i).location;
+        return CinemaData.get(i).address;
     }
 
     @Override
@@ -70,8 +71,8 @@ public class CinfoAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) cinimeView.getTag();
         }
 
-        viewHolder.cinimeName.setText(CinimeData.get(i).name);
-        viewHolder.cinimeLocation.setText(CinimeData.get(i).location);
+        viewHolder.cinimeName.setText(CinemaData.get(i).name);
+        viewHolder.cinimeLocation.setText(CinemaData.get(i).address);
 
         return cinimeView;
     }

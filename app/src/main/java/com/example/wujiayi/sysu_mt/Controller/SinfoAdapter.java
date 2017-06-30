@@ -1,4 +1,4 @@
-package com.example.wujiayi.sysu_mt.Model;
+package com.example.wujiayi.sysu_mt.Controller;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.wujiayi.sysu_mt.Model.SessionData;
 import com.example.wujiayi.sysu_mt.R;
 
 import java.util.List;

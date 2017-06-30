@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.wujiayi.sysu_mt.Model.RecyclerAdapter;
+import com.example.wujiayi.sysu_mt.Controller.RecyclerAdapter;
 import com.example.wujiayi.sysu_mt.Model.SessionData;
-import com.example.wujiayi.sysu_mt.Model.SinfoAdapter;
+import com.example.wujiayi.sysu_mt.Controller.SinfoAdapter;
 import com.example.wujiayi.sysu_mt.R;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ import java.util.List;
  * Created by Liudx on 2017/6/30.
  */
 
-public class CinimeActivity extends Activity {
+public class CinemaDetailsActivity extends Activity {
 
     private RecyclerView recyclerView;
     private RecyclerAdapter recyclerAdapter;
@@ -51,7 +51,7 @@ public class CinimeActivity extends Activity {
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        recyclerAdapter = new RecyclerAdapter(CinimeActivity.this, Imageid);
+        recyclerAdapter = new RecyclerAdapter(CinemaDetailsActivity.this, Imageid);
 
         recyclerAdapter.setOnItemClickLitener(new RecyclerAdapter.OnItemClickLitener() {
             @Override
@@ -66,7 +66,7 @@ public class CinimeActivity extends Activity {
         recyclerView.setAdapter(recyclerAdapter);
 
         sessionView = (ListView) findViewById(R.id.SessionList);
-        sinfoAdapter = new SinfoAdapter(CinimeActivity.this, sessionDatas);
+        sinfoAdapter = new SinfoAdapter(CinemaDetailsActivity.this, sessionDatas);
         sessionView.setAdapter(sinfoAdapter);
 
     }

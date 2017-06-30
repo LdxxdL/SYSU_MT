@@ -1,4 +1,4 @@
-package com.example.wujiayi.sysu_mt.Model;
+package com.example.wujiayi.sysu_mt.Controller;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.wujiayi.sysu_mt.Model.MovieData;
 import com.example.wujiayi.sysu_mt.R;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 
 public class minfoAdapter extends BaseAdapter{
 
-    private ArrayList<MovieData> movieData;//定义数据。
+    public ArrayList<MovieData> movieData;//定义数据。
     private Context context;//定义Inflater,加载我们自定义的布局。
 
     public minfoAdapter(Context _context, ArrayList<MovieData> _data) {

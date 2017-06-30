@@ -3,15 +3,16 @@ package com.example.wujiayi.sysu_mt.View;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.wujiayi.sysu_mt.Controller.User;
-import com.example.wujiayi.sysu_mt.Model.CinfoAdapter;
+import com.example.wujiayi.sysu_mt.Controller.CinfoAdapter;
 import com.example.wujiayi.sysu_mt.Model.CinemaData;
 import com.example.wujiayi.sysu_mt.R;
 
@@ -23,7 +24,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by wujiayi on 17/5/23.
@@ -31,8 +32,7 @@ import java.util.List;
 public class Fragment_cinime extends ListFragment
 
 {
-
-    private List<CinemaData> acinemaList;
+    private ArrayList<CinemaData> acinemaList = new ArrayList<>();
     private CinfoAdapter adapter;
     private int flag = 0;
 
@@ -56,6 +56,15 @@ public class Fragment_cinime extends ListFragment
         return view;
     }
 
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.what == 1) {
+                setListAdapter(adapter);
+            }
+        }
+    };
+
     public void getCinemaList(final Context context) throws Exception {
         new Thread(new Runnable() {
             @Override
@@ -76,14 +85,15 @@ public class Fragment_cinime extends ListFragment
                         JSONObject jsonobj = jsonarray.getJSONObject(i);
                         String name = jsonobj.getString("name"), address = jsonobj.getString("address"),
                                 city = jsonobj.getString("city"), moviename = jsonobj.getString("moviename");
-                        CinemaData cinemaData = new CinemaData(name, address, city, moviename);
+                        CinemaData cinemaData = new CinemaData(name, city, address, moviename);
                         acinemaList.add(cinemaData);
-                        Log.e("sbwujiayi", name+address+city+moviename);
+//
                     }
                     adapter = new CinfoAdapter(context, acinemaList);
-                    setListAdapter(adapter);
+                    Message msg = new Message();
+                    msg.what = 1;
+                    handler.sendMessage(msg);
                 } catch (Exception e) {
-                    Log.e("sbwujiayi","是真的有毒");
                     e.printStackTrace();
                 }
             }
@@ -97,7 +107,7 @@ public class Fragment_cinime extends ListFragment
         Bundle bundle = new Bundle();
         bundle.putString("name", adapter.getName(position));
         bundle.putString("location", adapter.getLocation(position));
-        Intent intent = new Intent(getActivity(), CinemaActivity.class);
+        Intent intent = new Intent(getActivity(), CinemaDetailsActivity.class);
         intent.putExtras(bundle);
         startActivity(intent);
 
