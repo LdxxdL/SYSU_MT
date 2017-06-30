@@ -15,7 +15,6 @@ import android.widget.TabWidget;
 import android.widget.TextView;
 
 import com.example.wujiayi.sysu_mt.Controller.MyFragmentAdapter;
-import com.example.wujiayi.sysu_mt.Model.GetImage;
 import com.example.wujiayi.sysu_mt.View.Fragment_cinime;
 import com.example.wujiayi.sysu_mt.View.Fragment_movie;
 import com.example.wujiayi.sysu_mt.View.Fragment_myinfo;
@@ -35,7 +34,6 @@ public class MainActivity extends FragmentActivity implements
     private String textViewArray[] = { "影片", "影院", "我的"};
     private List<Fragment> list = new ArrayList<Fragment>();
     private ViewPager vp;
-    public GetImage Image;
     public ImageView imageView;
 
     @Override

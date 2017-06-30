@@ -61,6 +61,7 @@ public class Fragment_movie extends ListFragment
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
+            super.handleMessage(msg);
             if (msg.what == 1) {
                 setListAdapter(adapter);
             }
@@ -97,7 +98,6 @@ public class Fragment_movie extends ListFragment
                     msg.what = 1;
                     handler.sendMessage(msg);
 
-                    setListAdapter(adapter);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -119,6 +119,7 @@ public class Fragment_movie extends ListFragment
         bundle.putString("score", adapter.movieData.get(position).score);
         bundle.putString("actor", adapter.movieData.get(position).actor);
         bundle.putString("intro", adapter.movieData.get(position).intro);
+        bundle.putString("src", adapter.movieData.get(position).src);
         Intent intent = new Intent(getActivity(), MovieDetailsActivity.class);
         intent.putExtras(bundle);
         startActivity(intent);
