@@ -31,7 +31,7 @@ public class Fragment_cinime extends ListFragment
         cinimeData = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            CinimeData cinime = new CinimeData("123","123");
+            CinimeData cinime = new CinimeData("1234563214656664654","1234654641635163541");
             cinimeData.add(cinime);
         }
 

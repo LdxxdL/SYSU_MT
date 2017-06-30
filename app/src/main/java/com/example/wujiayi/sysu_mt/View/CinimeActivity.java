@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.wujiayi.sysu_mt.Model.RecyclerAdapter;
+import com.example.wujiayi.sysu_mt.Model.SessionData;
+import com.example.wujiayi.sysu_mt.Model.SinfoAdapter;
 import com.example.wujiayi.sysu_mt.R;
 
 import java.util.ArrayList;
@@ -24,6 +27,10 @@ public class CinimeActivity extends Activity {
     private RecyclerAdapter recyclerAdapter;
     private List<Integer> Imageid;
     private List<String> ImageName;
+    private ListView sessionView;
+    private SessionData sessionData;
+    private List<SessionData> sessionDatas;
+    private SinfoAdapter sinfoAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +65,10 @@ public class CinimeActivity extends Activity {
 
         recyclerView.setAdapter(recyclerAdapter);
 
+        sessionView = (ListView) findViewById(R.id.SessionList);
+        sinfoAdapter = new SinfoAdapter(CinimeActivity.this, sessionDatas);
+        sessionView.setAdapter(sinfoAdapter);
+
     }
 
     private void initDatas()
@@ -68,6 +79,24 @@ public class CinimeActivity extends Activity {
 
         ImageName = new ArrayList<String>(Arrays.asList("爱乐之城", "变形金刚5：最后的骑士",
                 "刺客信条", "加勒比海盗5：死无对证", "金刚狼3：殊死一战","惊天魔盗团2", "银河护卫队2"));
+
+        sessionDatas = new ArrayList<>();
+        sessionData = new SessionData("10:25", "5号厅", "38");
+        sessionDatas.add(sessionData);
+        sessionData = new SessionData("12:15", "8号厅", "38");
+        sessionDatas.add(sessionData);
+        sessionData = new SessionData("13:55", "2号厅", "38");
+        sessionDatas.add(sessionData);
+        sessionData = new SessionData("15:55", "4号厅", "38");
+        sessionDatas.add(sessionData);
+        sessionData = new SessionData("17:35", "1号厅", "38");
+        sessionDatas.add(sessionData);
+        sessionData = new SessionData("19:30", "7号厅", "38");
+        sessionDatas.add(sessionData);
+        sessionData = new SessionData("21:30", "6号厅", "38");
+        sessionDatas.add(sessionData);
+        sessionData = new SessionData("22:55", "6号厅", "38");
+        sessionDatas.add(sessionData);
     }
 
 }
