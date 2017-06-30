@@ -79,9 +79,9 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="40sp"
+        android:layout_height="30sp"
         android:layout_margin="8dp"
-        android:background="@color/LightRed"
+        android:background="@drawable/button_shape"
         android:text="立即购票"
         android:textColor="@color/White"/>
 
@@ -98,6 +98,14 @@
         android:layout_height="10dp"
         android:background="#EEEEEE"
         android:layout_margin="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="14sp"
+        android:text="演员表"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="8dp"/>
 
     <TextView
         android:layout_width="match_parent"

@@ -42,11 +42,11 @@ public class CinfoAdapter extends BaseAdapter {
     }
 
     public String getName(int i) {
-        return CinimeData.get(i).getName();
+        return CinimeData.get(i).name;
     }
 
     public String getLocation(int i) {
-        return CinimeData.get(i).getLocation();
+        return CinimeData.get(i).location;
     }
 
     @Override
@@ -70,8 +70,8 @@ public class CinfoAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) cinimeView.getTag();
         }
 
-        viewHolder.cinimeName.setText(CinimeData.get(i).getName());
-        viewHolder.cinimeLocation.setText(CinimeData.get(i).getLocation());
+        viewHolder.cinimeName.setText(CinimeData.get(i).name);
+        viewHolder.cinimeLocation.setText(CinimeData.get(i).location);
 
         return cinimeView;
     }
