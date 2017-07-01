@@ -25,9 +25,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".View.MovieActivity">
+        <activity android:name=".View.MovieDetailsActivity">
         </activity>
-        <activity android:name=".View.CinimeActivity">
+        <activity android:name=".View.CinemaDetailsActivity">
         </activity>
     </application>
 

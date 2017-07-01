@@ -23,7 +23,6 @@ public class Fragment_myinfo extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item3, null);
 
-        Button button;
         return view;
 
     }

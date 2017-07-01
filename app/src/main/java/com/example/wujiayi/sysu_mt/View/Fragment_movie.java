@@ -3,8 +3,9 @@ package com.example.wujiayi.sysu_mt.View;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,7 @@ import android.widget.ListView;
 
 import com.example.wujiayi.sysu_mt.Controller.User;
 import com.example.wujiayi.sysu_mt.Model.MovieData;
-import com.example.wujiayi.sysu_mt.Model.minfoAdapter;
+import com.example.wujiayi.sysu_mt.Controller.minfoAdapter;
 import com.example.wujiayi.sysu_mt.R;
 
 import org.json.JSONArray;
@@ -32,7 +33,6 @@ import java.util.ArrayList;
 public class Fragment_movie extends ListFragment
 
 {
-    private int listener = 0;
     private int flag = 0;
     public minfoAdapter adapter;
     public ArrayList<MovieData> amovieList = new ArrayList<>();
@@ -50,7 +50,6 @@ public class Fragment_movie extends ListFragment
             try {
                 getMovieList(this.getContext());
                 flag = 1;
-                setListener();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -59,19 +58,20 @@ public class Fragment_movie extends ListFragment
         return view;
     }
 
-    private void setListener() {
-        listener = 1;
-    }
-    public int getListener() {
-        return listener;
-    }
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.what == 1) {
+                setListAdapter(adapter);
+            }
+        }
+    };
 
     public void getMovieList(final Context context) throws Exception {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Log.e("sbwujiayi", "!!!!!!!!!!!!!!!!");
                     URL url = new URL(User.getInstance().IP + "movielist");
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     InputStream is = connection.getInputStream();
@@ -82,7 +82,7 @@ public class Fragment_movie extends ListFragment
                     is.close();
                     connection.disconnect();
 
-                    JSONArray jsonarray = new JSONArray(json);Log.e("sbwujiayi",json);
+                    JSONArray jsonarray = new JSONArray(json);
                     for (int i = 0; i < jsonarray.length(); i++) {
                         JSONObject jsonobj = jsonarray.getJSONObject(i);
                         String name = jsonobj.getString("name"), src = jsonobj.getString("src"),
@@ -93,7 +93,10 @@ public class Fragment_movie extends ListFragment
                         amovieList.add(movieData);
                     }
                     adapter = new minfoAdapter(context, amovieList);
-                    setListAdapter(adapter);
+                    Message msg = new Message();
+                    msg.what = 1;
+                    handler.sendMessage(msg);
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -105,8 +108,19 @@ public class Fragment_movie extends ListFragment
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
-        Intent intent = new Intent(getActivity(), MovieActivity.class);
-        startActivity(intent);
 
+        super.onListItemClick(l, v, position, id);
+
+        Bundle bundle = new Bundle();
+        bundle.putString("name", adapter.movieData.get(position).name);
+        bundle.putString("type", adapter.movieData.get(position).type);
+        bundle.putString("date", adapter.movieData.get(position).date);
+        bundle.putString("score", adapter.movieData.get(position).score);
+        bundle.putString("actor", adapter.movieData.get(position).actor);
+        bundle.putString("intro", adapter.movieData.get(position).intro);
+        bundle.putString("src", adapter.movieData.get(position).src);
+        Intent intent = new Intent(getActivity(), MovieDetailsActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }
