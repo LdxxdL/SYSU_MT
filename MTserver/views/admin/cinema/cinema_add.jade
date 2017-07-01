@@ -1,0 +1,31 @@
+extends ../../layout
+
+block content
+  h3.text-center 影院添加
+  br
+  .container
+    .row
+      form.form-horizontal(method="POST" action="add" name='cinemaform')
+        .form-group
+          label.col-md-2.control-label 名字
+          .col-md-8
+            input(type="text" id="name" name="name").form-control
+        .form-group
+          label.col-md-2.control-label 城市
+          .col-md-8
+            input(type="text" id="city" name="city").form-control
+        .form-group
+          label.col-md-2.control-label 地址
+          .col-md-8
+            input(type="text" id="address" name="address").form-control
+        .form-group
+          label.col-md-2.control-label 电影
+          .col-md-8
+            input(type="text" id="moviename" name="moviename").form-control
+
+        .form-group
+          .col-md-1.col-md-offset-2
+            button(type="submit").btn.btn-primary 提交添加
+          .col-md-2
+            a(href="/admin/cinema").btn.btn-primary 返回
+  

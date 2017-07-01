@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\Users\Project\SYSU_MT\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c0c48a2eab4eca4ba3d8ea56d8b4107a07828bd7">
+        <dex dex="D:\Users\Project\SYSU_MT\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_4a17d63f0c6fe7c31adbc569a32a060e38923719\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Liudx\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.0\2b802460eea20f8f2ad9c08c74e0f14718e88aa9\okhttp-3.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="D:\Users\Project\SYSU_MT\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.3.0_bf1ef004e8777630f1f4436527c0c3c66fda2df5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Liudx\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="D:\Users\Project\SYSU_MT\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.8.0_0f3ada2183a51e1801712daeb7d5f6c420822302\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Liudx\.android\build-cache\959701f3c72f50a5566b4fdf480f4f42936ba166\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="efeda77c808750cb670ee9c48d8a1835d89dbcb2">
+        <dex dex="D:\Users\Project\SYSU_MT\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_846a9e4ec2febaf847932f538a156f7548973e53\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\Project\SYSU_MT\app\libs\json.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="096aa1a6883b74d661736a44d56a44694f516707">
+        <dex dex="D:\Users\Project\SYSU_MT\app\build\intermediates\transforms\dex\debug\folders\1000\2\json_c79c415cffd7c1b2de2dc24ffddcf6e830e81070\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Users\Project\SYSU_MT\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\Users\Project\SYSU_MT\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_c163969fc633e768ff8d9e4e5690e1031f7ef418\classes.dex" />
+    </item>
+
+</items>

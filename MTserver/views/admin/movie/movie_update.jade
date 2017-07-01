@@ -1,0 +1,46 @@
+extends ../../layout
+
+block content
+  h3.text-center 电影信息修改
+  br
+  .container
+    .row
+      if movie && movie.name
+        form.form-horizontal(name="movieform" method="POST" action="/admin/movie/update")
+          .form-group.hidden
+            input(type="text" name="id" value="#{movie.id}")
+          .form-group
+            label.col-md-2.control-label 名字
+            .col-md-8
+              input(type="text" name="name" value="#{movie.name}").form-control
+          .form-group
+            label.col-md-2.control-label 类型
+            .col-md-8
+              input(type="text" name="type" value="#{movie.type}").form-control
+          .form-group
+            label.col-md-2.control-label 评分
+            .col-md-8
+              input(type="text" name="score" value="#{movie.score}").form-control
+          .form-group
+            label.col-md-2.control-label 日期
+            .col-md-8
+              input(type="text" name="date" value="#{movie.date}").form-control
+          .form-group
+            label.col-md-2.control-label 介绍
+            .col-md-8
+              input(type="text" name="intro" value="#{movie.intro}").form-control
+          .form-group
+            label.col-md-2.control-label 演员
+            .col-md-8
+              input(type="text" name="actor" value="#{movie.actor}").form-control
+          .form-group
+            label.col-md-2.control-label 图片
+            .col-md-8
+              input(type="text" name="src" value="#{movie.src}").form-control
+          .form-group
+            .col-md-1.col-md-offset-2
+              button(type="submit").btn.btn-primary 提交修改
+            .col-md-2
+              a(href="/admin/movie").btn.btn-primary 返回
+      else
+        .alert.alert-warning 查询用户信息出错

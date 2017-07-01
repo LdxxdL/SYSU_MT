@@ -1,0 +1,50 @@
+extends ../../layout
+
+block content
+  h3.text-center 影院后台列表
+  table.table.table-bordered
+    thead
+      tr
+        th 名字
+        th 城市
+        th 地址
+        th 电影
+        th 更新
+        th 删除
+    tbody
+      if cinemas && cinemas.length > 0
+        each cinema in cinemas
+          tr
+            td #{cinema.name}
+            td #{cinema.city}
+            td #{cinema.address}
+            td #{cinema.moviename}
+            td 
+              a.link(href="/admin/cinema/update?id=#{cinema.id}") 更新
+            td
+              a(data-id='#{cinema.id}' class="removeCinema").btn.btn-danger 删除
+      
+      input(type='hidden' value='' id='selectId')
+      
+  a(href="/admin/cinema/add").btn.btn-primary 添加
+
+  //删除提示弹出框
+  .modal(id='removeConfirm')
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button(type="button" data-dismiss="modal").close
+            span(aria-hidden="true") &times;
+            span.sr-only Close
+          h4.modal-title 删除提示
+        
+        .modal-body
+          p(id='removeTips') 确定要删除该数据吗？
+        
+        .modal-footer
+          button(type="button" data-dismiss="modal" id="cancelRemove").btn.btn-default 关闭
+          button(type="button" id="removeSubmit").btn.btn-primary 确定
+              
+  
+  //导入用户处理脚本
+  script(src="/javascripts/cinemas.js")

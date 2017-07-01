@@ -1,0 +1,34 @@
+extends ../../layout
+
+block content
+  h3.text-center 影院信息修改
+  br
+  .container
+    .row
+      if cinema && cinema.name
+        form.form-horizontal(name="cinemaform" method="POST" action="/admin/cinema/update")
+          .form-group.hidden
+            input(type="text" name="id" value="#{cinema.id}")
+          .form-group
+            label.col-md-2.control-label 名字
+            .col-md-8
+              input(type="text" name="name" value="#{cinema.name}").form-control
+          .form-group
+            label.col-md-2.control-label 城市
+            .col-md-8
+              input(type="text" name="city" value="#{cinema.city}").form-control
+          .form-group
+            label.col-md-2.control-label 地址
+            .col-md-8
+              input(type="text" name="address" value="#{cinema.address}").form-control
+          .form-group
+            label.col-md-2.control-label 电影
+            .col-md-8
+              input(type="text" name="moviename" value="#{cinema.moviename}").form-control
+          .form-group
+            .col-md-1.col-md-offset-2
+              button(type="submit").btn.btn-primary 提交修改
+            .col-md-2
+              a(href="/admin/cinema").btn.btn-primary 返回
+      else
+        .alert.alert-warning 查询用户信息出错

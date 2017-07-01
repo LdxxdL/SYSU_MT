@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  h3.text-center 首页界面
+  table.table.table-bordered
+    thead
+      tr
+        th 名字
+        th 类型
+        th 评分
+        th 日期
+        th 介绍
+        th 演员
+        th 图片
+    tbody
+      if movies && movies.length > 0
+        each movie in movies
+          tr
+            td #{movie.name}
+            td #{movie.type}
+            td #{movie.score}
+            td #{movie.date}
+            td #{movie.intro}
+            td #{movie.actor}
+            td #{movie.src}
+
+  table.table.table-bordered
+    thead
+      tr
+        th 名字
+        th 城市
+        th 地址
+        th 电影
+    tbody
+      if cinemas && cinemas.length > 0
+        each cinema in cinemas
+          tr
+            td #{cinema.name}
+            td #{cinema.city}
+            td #{cinema.address}
+            td #{cinema.moviename}
+  a(href="/admin/movie").btn.btn-default 进入电影后台
+
+  a(href="/admin/cinema").btn.btn-default 进入影院后台
